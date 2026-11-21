@@ -1,14 +1,14 @@
-# TryHackMe: Shadow Trace Write-up
+# Shadow Trace: Malware Analysis and Alert Triage
 
-Room: [Shadow Trace](https://tryhackme.com/room/shadowtrace) (SOC Level 1, Malware Concepts for SOC)
+Scenario: analysis of a suspicious Windows executable and triage of two EDR alerts (SOC, malware concepts).
 
 Goal: analyse a suspicious Windows executable, extract indicators of compromise, then trace the infection through two EDR alerts.
 
-> Note: the final flag is redacted on purpose so the room is not spoiled. Follow the steps and you will get it yourself.
+> Note: the final flag is redacted on purpose.
 
 ---
 
-## Task 2: File analysis
+## 1. File analysis
 
 Sample: `C:\Users\DFIRUser\Desktop\windows-update.exe`
 
@@ -65,7 +65,7 @@ Note: `tryhatme.com` is the payload delivery domain, while `responses.tryhatme.c
 Next to `tryhatme.com/` there is a long Base64 string ending with `=`. Decoding it with CyberChef (recipe: From Base64) gives the flag:
 
 ```
-THM{********************}
+[REDACTED]
 ```
 
 ### 6. Socket communication library
@@ -80,9 +80,9 @@ The string output also shows `HttpOpenRequestA` and `HttpSendRequestA`, which co
 
 ---
 
-## Task 3: Alerts analysis
+## 2. Alerts analysis
 
-The room provides a static EDR dashboard with two critical alerts from host `WIN-SRV-01.tryhackme.local`.
+The lab provides a static EDR dashboard with two critical alerts from host `WIN-SRV-01`.
 
 ![EDR alerts](images/04-alerts.png)
 
